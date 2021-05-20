@@ -25,6 +25,7 @@
             app:menu="@menu/top_app_bar_menu"
             app:titleCentered="true"
             app:subtitleCentered="true"
+            app:navigationIcon="@android:drawable/ic_delete"
             app:title="你好"
             />
 
