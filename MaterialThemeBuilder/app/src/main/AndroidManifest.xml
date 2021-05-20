@@ -39,6 +39,9 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <activity android:name=".ui.toolbar.ToolbarActivity"
+            android:theme="@style/Theme.MyApp"
+            />
     </application>
 
 </manifest>

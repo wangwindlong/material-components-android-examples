@@ -17,6 +17,7 @@
 package io.material.materialthemebuilder.ui.component
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -49,6 +50,7 @@ import io.material.materialthemebuilder.ui.component.Component.SNACKBAR
 import io.material.materialthemebuilder.ui.component.Component.DIALOG
 import io.material.materialthemebuilder.ui.component.Component.BOTTOM_SHEET
 import io.material.materialthemebuilder.ui.component.Component.IMAGE
+import io.material.materialthemebuilder.ui.toolbar.ToolbarActivity
 
 /**
  * Sealed class to define all [RecyclerView.ViewHolder]s used to display [Component]s.
@@ -141,7 +143,11 @@ sealed class ComponentViewHolder(val view: View) : RecyclerView.ViewHolder(view)
         R.string.snackbar_message_text,
         Snackbar.LENGTH_INDEFINITE
       )
-        .setAction(R.string.snackbar_action_text) { }
+        .setAction(R.string.snackbar_action_text) {
+          container.context.startActivity(Intent().apply {
+            setClass(container.context, ToolbarActivity::class.java)
+          })
+        }
         .view
       (snackbarView.layoutParams as FrameLayout.LayoutParams).gravity = Gravity.CENTER
 
